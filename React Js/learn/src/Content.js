@@ -1,6 +1,5 @@
 import React from 'react'
-import itemList from './itemList'
-import demo from './demo'
+import ItemList from './ItemList'
 const Content = ({items,handleCheck,handleDelete}) => {
   return (
     <>
@@ -8,7 +7,7 @@ const Content = ({items,handleCheck,handleDelete}) => {
     <main>
      
       {items.length ? (
-        <itemList items={items} handleCheck={handleCheck} handleDelete={handleDelete}/>
+        <ItemList items={items} handleCheck={handleCheck} handleDelete={handleDelete}/>
       ) : <p style={{ marginTop: "2rem" }}>Your List is Empty</p>}
     </main>
       </>

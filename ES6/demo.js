@@ -26,7 +26,7 @@ const ob1 = [{
       
 },
 {
-    id: 1,
+    id: 2,
     name:"Bhandari"
       
 },{
@@ -36,17 +36,10 @@ const ob1 = [{
 }]
 
 
-ob=ob1.map((o)=>o.id==1?{...o,id:2}:o)
+// const ob=ob1.map((o)=>o.id==1?{...o,id:2}:o)
 
+// console.log(ob)
+
+
+const ob=ob1.filter((o)=>o.id!==1)
 console.log(ob)
-
-
-const ob2 = {
-    id: 1
-    ,
-    name:"suman"
-}
-
-
-const ob3 = { ...ob2,id:3 }
-console.log(ob3)

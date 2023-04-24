@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaTrashAlt} from 'react-icons/fa'
-const itemList = ({items,handleCheck,handleDelete}) => {
+const ItemList = ({items,handleCheck,handleDelete}) => {
   return (
       <main>
           <ul>
@@ -25,4 +25,4 @@ const itemList = ({items,handleCheck,handleDelete}) => {
   )
 }
 
-export default itemList
+export default ItemList
