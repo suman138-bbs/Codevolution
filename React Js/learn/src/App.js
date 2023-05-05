@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import './index.css';
 import Content from "./Content";
+import AddItem from "./AddItem";
 import React from "react";
 const App = () => {
   const [items,setItems]=useState([
@@ -44,6 +45,7 @@ const App = () => {
     <div className="App">
    
       <Header title='Groceries List' />
+      <AddItem/>
       <Content items={items} handleCheck={handleCheck} handleDelete={handleDelete} />
       <Footer length={ items.length} />
     </div>
