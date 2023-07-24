@@ -1,9 +1,12 @@
 const redux = require('redux');
 const createStore = redux.createStore
 const bindActionCreators = redux.bindActionCreators
-const combinedreducers  = redux.combineReducers
+const combinedreducers = redux.combineReducers
+const applyMiddleware = redux.applyMiddleware
+const reduxLogger = require('redux-logger')
+const loggre = reduxLogger.createLogger()   //middleware which we will have passed inside applymiddleware 
 
-const CAKE_ORDERED = "CAKE_ORDERED";
+const CAKE_ORDERED = "CAKE_ORDERED";  //Defining the Action Type
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
 
 const ICE_ORDERED = "ICE_ORDERED";
@@ -110,15 +113,15 @@ const rootReducer = combinedreducers({
     
 })
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,applyMiddleware(loggre));
 const action = bindActionCreators(orderCake, orderIce,restockedCake,restockedCake, store.dispatch)
 console.log("Initial State", store.getState())
 
 store.dispatch(orderCake())
 store.dispatch(orderCake())
 store.dispatch(orderIce())
-console.log("Initial State", store.getState())
-action.orderCake
-console.log("Initial State", store.getState())
+// console.log("Initial State", store.getState())
+// action.orderCake
+// console.log("Initial State", store.getState())
 
 // unsubscribe()
